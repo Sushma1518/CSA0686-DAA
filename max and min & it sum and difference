@@ -1,0 +1,48 @@
+#include<stdio.h>
+int main()
+{
+	int m,n,s,a[20],temp,i,j;
+	printf("enter the no of elements:");
+	scanf("%d",&s);
+	printf("enter the mth value:");
+	scanf("%d",&m);
+	printf("enter the nth value:");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",a[i]);
+	}
+	for(i=0;i<s;i++)
+	{
+		for(j=0;j<s;j++){
+			if(a[i]>a[j])
+			{
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+	if(m>0 && n>0 && m<s && n<s){
+		printf("mth value is:%d\n",a[s-m]);
+		printf("nth value is:%d\n",a[n-1]);
+		printf("the sum of mth and nth is:%d\n",a[s-m]+a[n-1]);
+		printf("the difference of mth and nth value is:%d\n",a[s-m]-(a[n-1]));
+	}
+	else
+	{
+		printf("\ninvalid input");
+	}
+}
+
+OUTPUT
+enter the no of elements:5
+mth value:0
+nth value:1
+16,16,16,16,16
+illegal output
+b)mth value:0
+nth value:0
+0,0,0,0,0
+sum=0
+diff=0

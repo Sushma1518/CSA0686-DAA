@@ -1,0 +1,32 @@
+#include <stdio.h>
+void printPascalRow(int n, int k) {
+  int value = 1;
+  printf("%d", value);
+  for (int i = 0; i < k; i++) {
+    value = value * (n - i) / (i + 1);
+    printf(" %d", value);
+  }
+  printf("\n");
+}
+void printPascalTriangle(int n) {
+  for (int k = 0; k < n; k++) {
+    for (int s = 0; s < n - k - 1; s++) {
+      printf(" ");
+    }
+    printPascalRow(k, k);
+  }
+}
+int main() {
+  int n;
+  printf("Enter the number of rows: ");
+  scanf("%d", &n);
+  printPascalTriangle(n);
+}
+
+OUTPUT
+enter no of Rows : 5
+    1
+   1 1
+  1 2 1
+ 1 3 3 1
+1 4 6 4 1

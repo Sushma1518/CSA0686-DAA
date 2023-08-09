@@ -1,0 +1,46 @@
+#include<stdio.h>
+int main()
+{
+	int m,n=0,s,a[20],temp,i,j;
+	printf("enter the no of elements:");
+	scanf("%d",&s);
+	printf("enter the target value:");
+	scanf("%d",&m);
+	printf("enter the array value:");
+	scanf("%d",&n);
+	for(i=0;i<s;i++)
+	{
+		scanf("%d",a[i]);
+	}
+	for(i=0;i<s;i++)
+	{
+		for(j=0;j<s;j++){
+			if(a[i]>a[j])
+			{
+				temp=a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+	for(i=0;i<s;i++){
+		if(a[i]==m)
+		{
+		n=1;
+		printf("target found at position a[%d].",i);
+		break;
+		}
+		else
+		continue;
+	}
+	if(n=1)
+	printf("\nsuccessful");
+	else
+	printf("\ntarget not found");
+}
+
+OUTPUT
+Eenter the no of elements:8
+45,4,23,-11,20,5,10,50
+key elememt : 5
+position is 2
